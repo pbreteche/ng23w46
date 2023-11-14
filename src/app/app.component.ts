@@ -4,6 +4,7 @@ import { RouterOutlet } from '@angular/router';
 import { songs } from "./fixtures/songs";
 import {SongCardComponent} from "./song-card/song-card.component";
 import {SongSelectListComponent} from "./Song/song-select-list/song-select-list.component";
+import {Song} from "./model/song";
 
 @Component({
   selector: 'app-root',
@@ -15,4 +16,9 @@ import {SongSelectListComponent} from "./Song/song-select-list/song-select-list.
 export class AppComponent {
   title = 'ng23w46';
   songs = songs;
+  current = songs[0]
+
+  setCurrent($event: Song) {
+    this.current = $event;
+  }
 }
