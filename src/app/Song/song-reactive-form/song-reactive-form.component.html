@@ -1,0 +1,34 @@
+<form [formGroup]="form">
+  <div>
+    <label for="song-template-form-title">Titre</label>
+    <input type="text" id="song-template-form-title"
+           formControlName="title"
+    >
+    <p class="error-message">
+      Merci de saisir un titre.
+    </p>
+  </div>
+  <div>
+    <label for="song-template-form-artist">Artiste</label>
+    <input type="text" id="song-template-form-artist"
+           formControlName="artist"
+    >
+    <p class="error-message">
+      Merci de saisir un artiste.
+    </p>
+  </div>
+  <div>
+    <label for="song-template-form-year">Année</label>
+    <input type="number" id="song-template-form-year"
+           formControlName="year"
+    >
+    <p class="error-message">
+      L'année doit se situer entre 1900 et 2200.
+    </p>
+  </div>
+  <button>Ajouter</button>
+</form>
+
+<pre>
+  {{ form.value | json }}
+</pre>

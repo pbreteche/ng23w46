@@ -6,6 +6,7 @@ import {SongCardComponent} from "./song-card/song-card.component";
 import {SongSelectListComponent} from "./Song/song-select-list/song-select-list.component";
 import {Song} from "./model/song";
 import {SongTemplateFormComponent} from "./Song/song-template-form/song-template-form.component";
+import {SongReactiveFormComponent} from "./Song/song-reactive-form/song-reactive-form.component";
 
 @Component({
   selector: 'app-root',
@@ -15,7 +16,7 @@ import {SongTemplateFormComponent} from "./Song/song-template-form/song-template
     RouterOutlet,
     SongCardComponent,
     SongSelectListComponent,
-    SongTemplateFormComponent
+    SongReactiveFormComponent
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
