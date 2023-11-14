@@ -1,0 +1,11 @@
+@import "../../../styles/variables";
+@import "../../../styles/mixins";
+
+nav {
+  @include shadow-boxed;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}

@@ -1,0 +1,5 @@
+@mixin shadow-boxed {
+  box-shadow: 0 2px .5em $brand-color;
+  border-radius: .5em;
+  padding: .75em;
+}
