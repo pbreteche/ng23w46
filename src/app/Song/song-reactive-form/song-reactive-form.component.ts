@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators} from "@angular/forms";
+import {SongListService} from "../../song-list.service";
+import {Song} from "../../model/song";
 
 @Component({
   selector: 'app-song-reactive-form',
@@ -18,4 +20,24 @@ export class SongReactiveFormComponent {
       Validators.max(2200),
     ])
   });
+  constructor(public songList: SongListService) {
+  }
+  get artist() {
+    return this.form.get('artist');
+  }
+
+  showErrorFor(formControlName: string, errorKey?: string) {
+    const formControl = this.form.get(formControlName);
+    if (errorKey) {
+      return formControl?.errors?.[errorKey] && formControl?.touched;
+    }
+
+    return formControl?.invalid && formControl?.touched;
+  }
+
+  save() {
+    console.log(this.form.value)
+    this.songList.songs.push(this.form.value as Song);
+    this.form.reset();
+  }
 }

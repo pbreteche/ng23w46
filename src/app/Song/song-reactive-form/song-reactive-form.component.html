@@ -1,10 +1,10 @@
-<form [formGroup]="form">
+<form [formGroup]="form" (ngSubmit)="save()">
   <div>
     <label for="song-template-form-title">Titre</label>
     <input type="text" id="song-template-form-title"
            formControlName="title"
     >
-    <p class="error-message">
+    <p class="error-message" *ngIf="showErrorFor('title', 'required')">
       Merci de saisir un titre.
     </p>
   </div>
@@ -13,7 +13,7 @@
     <input type="text" id="song-template-form-artist"
            formControlName="artist"
     >
-    <p class="error-message">
+    <p class="error-message" *ngIf="artist?.errors?.['required'] && artist?.touched">
       Merci de saisir un artiste.
     </p>
   </div>
@@ -22,13 +22,9 @@
     <input type="number" id="song-template-form-year"
            formControlName="year"
     >
-    <p class="error-message">
+    <p class="error-message" *ngIf="showErrorFor('year', 'min') || showErrorFor('year', 'max')">
       L'année doit se situer entre 1900 et 2200.
     </p>
   </div>
-  <button>Ajouter</button>
+  <button [disabled]="form.invalid">Ajouter</button>
 </form>
-
-<pre>
-  {{ form.value | json }}
-</pre>
