@@ -22,7 +22,6 @@ import {SongTemplateFormComponent} from "./Song/song-template-form/song-template
 })
 export class AppComponent {
   title = 'ng23w46';
-  songs = songs;
   current = songs[0]
 
   setCurrent($event: Song) {

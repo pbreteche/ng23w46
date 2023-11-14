@@ -1,6 +1,6 @@
 <nav>
   <ul>
-    <li *ngFor="let song of songs">
+    <li *ngFor="let song of songList.songs">
       <a (click)="select(song)">{{ song.title }}</a>
     </li>
   </ul>

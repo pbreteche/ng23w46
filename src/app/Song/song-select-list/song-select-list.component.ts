@@ -1,6 +1,7 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {Song} from "../../model/song";
+import {SongListService} from "../../song-list.service";
 
 @Component({
   selector: 'app-song-select-list',
@@ -10,10 +11,11 @@ import {Song} from "../../model/song";
   styleUrl: './song-select-list.component.scss'
 })
 export class SongSelectListComponent {
-  @Input()
-  songs: Song[] = [];
   @Output()
   onSelect = new EventEmitter<Song>();
+
+  constructor(public songList: SongListService) {
+  }
 
   select(song: Song) {
     console.debug('onSelect event', song)
