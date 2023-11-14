@@ -12,4 +12,8 @@ import {FormsModule} from "@angular/forms";
 })
 export class SongTemplateFormComponent {
   newSong = new Song();
+
+  save() {
+    this.newSong = new Song();
+  }
 }
