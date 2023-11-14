@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {songs} from "../fixtures/songs";
+import {Song} from "../model/song";
 
 @Component({
   selector: 'app-song-card',
@@ -10,5 +10,6 @@ import {songs} from "../fixtures/songs";
   styleUrl: './song-card.component.scss'
 })
 export class SongCardComponent {
-  song = songs[0];
+  @Input()
+  song?: Song;
 }
