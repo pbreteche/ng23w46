@@ -1,7 +1,7 @@
 <nav>
   <ul>
     <li *ngFor="let song of songs">
-      {{ song.title }}
+      <a (click)="select(song)">{{ song.title }}</a>
     </li>
   </ul>
 </nav>

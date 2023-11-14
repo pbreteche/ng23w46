@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {Song} from "../../model/song";
 
@@ -12,4 +12,11 @@ import {Song} from "../../model/song";
 export class SongSelectListComponent {
   @Input()
   songs: Song[] = [];
+  @Output()
+  onSelect = new EventEmitter<Song>();
+
+  select(song: Song) {
+    console.debug('onSelect event', song)
+    this.onSelect.emit(song);
+  }
 }
