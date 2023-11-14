@@ -1,0 +1,19 @@
+<form>
+  <div>
+    <label for="song-template-form-title">Titre</label>
+    <input type="text" name="title" id="song-template-form-title" [(ngModel)]="newSong.title">
+  </div>
+  <div>
+    <label for="song-template-form-artist">Artiste</label>
+    <input type="text" name="artist" id="song-template-form-artist" [(ngModel)]="newSong.artist">
+  </div>
+  <div>
+    <label for="song-template-form-year">Année</label>
+    <input type="text" name="year" id="song-template-form-year" [(ngModel)]="newSong.year">
+  </div>
+  <button>Ajouter</button>
+</form>
+
+<pre>
+  {{ newSong | json}}
+</pre>
