@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
-import { Song } from './model/song';
+import { songs } from "./fixtures/songs";
 
 @Component({
   selector: 'app-root',
@@ -12,9 +12,5 @@ import { Song } from './model/song';
 })
 export class AppComponent {
   title = 'ng23w46';
-  song: Song = {
-    title: 'Titre chanson',
-    artist: 'Nom de scène',
-    year: 1234,
-  };
+  songs = songs;
 }

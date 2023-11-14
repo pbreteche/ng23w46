@@ -1,6 +1,8 @@
 <h1>{{ title }}</h1>
 
-<article>
+
+
+<article *ngFor="let song of songs">
   <h1>{{ song.title }}</h1>
   <p>{{ song.artist }} - {{ song.year }}</p>
 </article>
