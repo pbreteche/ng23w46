@@ -4,9 +4,11 @@ import {SongCardComponent} from "./song-card/song-card.component";
 import {SongReactiveFormComponent} from "./Song/song-reactive-form/song-reactive-form.component";
 import {songResolver} from "./song.resolver";
 import {songTitleResolver} from "./song-title.resolver";
+import {loginGuard} from "./login.guard";
 
 export const routes: Routes = [
   { path: '', component: SongSelectListComponent, title: 'Song app'},
   { path: 'detail/:id', component: SongCardComponent, resolve: {song: songResolver}, title: songTitleResolver},
-  { path: 'new', component: SongReactiveFormComponent, title: 'Nouvelle chanson'}
+  { path: 'new', component: SongReactiveFormComponent, title: 'Nouvelle chanson', canActivate: [loginGuard]},
+  { path: '**', redirectTo: '/'}
 ];
