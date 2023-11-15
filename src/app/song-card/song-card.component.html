@@ -1,4 +1,6 @@
-<article *ngIf="song">
+<article *ngIf="song; else elseText">
   <h1>{{ song.title }}</h1>
   <p>{{ song.artist }} - {{ song.year }}</p>
 </article>
+
+<ng-template #elseText>La chanson n'a pas été trouvée.</ng-template>
