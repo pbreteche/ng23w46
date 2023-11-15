@@ -1,0 +1,11 @@
+<div *ngIf="!loginService.username; else logoutBlock">
+  <form (submit)="login()">
+    <label for="login">Identifiant</label>
+    <input type="text" id="login" [(ngModel)]="credential" name="credential">
+    <button>Connexion</button>
+  </form>
+</div>
+
+<ng-template #logoutBlock>
+  <a (click)="logout()">Déconnexion ({{ loginService.username }})</a>
+</ng-template>

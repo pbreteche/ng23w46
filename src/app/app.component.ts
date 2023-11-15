@@ -1,9 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {RouterLink, RouterOutlet} from '@angular/router';
-import {SongCardComponent} from "./song-card/song-card.component";
-import {SongSelectListComponent} from "./Song/song-select-list/song-select-list.component";
-import {SongReactiveFormComponent} from "./Song/song-reactive-form/song-reactive-form.component";
+import {LoginComponent} from "./login/login.component";
 
 @Component({
   selector: 'app-root',
@@ -11,10 +9,8 @@ import {SongReactiveFormComponent} from "./Song/song-reactive-form/song-reactive
   imports: [
     CommonModule,
     RouterOutlet,
-    SongCardComponent,
-    SongSelectListComponent,
-    SongReactiveFormComponent,
-    RouterLink
+    RouterLink,
+    LoginComponent
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
