@@ -13,5 +13,7 @@ export class SongListService {
     song.id = this.nextId;
     this.songs.set(this.nextId, song);
     ++this.nextId;
+
+    return song.id;
   }
 }

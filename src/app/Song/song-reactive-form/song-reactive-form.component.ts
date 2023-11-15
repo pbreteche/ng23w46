@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import {FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators} from "@angular/forms";
 import {SongListService} from "../../song-list.service";
 import {Song} from "../../model/song";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-song-reactive-form',
@@ -20,7 +21,10 @@ export class SongReactiveFormComponent {
       Validators.max(2200),
     ])
   });
-  constructor(public songList: SongListService) {
+  constructor(
+    public songList: SongListService,
+    private router: Router
+  ) {
   }
   get artist() {
     return this.form.get('artist');
@@ -37,7 +41,8 @@ export class SongReactiveFormComponent {
 
   save() {
     console.log(this.form.value)
-    this.songList.add(this.form.value as Song);
+    const newId = this.songList.add(this.form.value as Song);
     this.form.reset();
+    this.router.navigate(['detail', newId])
   }
 }
