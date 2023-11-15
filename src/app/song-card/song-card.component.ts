@@ -1,12 +1,12 @@
 import {Component, OnInit} from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, RouterOutlet} from "@angular/router";
 import {Song} from "../model/song";
 
 @Component({
   selector: 'app-song-card',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterOutlet],
   templateUrl: './song-card.component.html',
   styleUrl: './song-card.component.scss'
 })
