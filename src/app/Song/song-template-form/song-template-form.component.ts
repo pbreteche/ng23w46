@@ -17,7 +17,7 @@ export class SongTemplateFormComponent {
   }
 
   save() {
-    this.songList.songs.push(this.newSong);
+    this.songList.add(this.newSong);
     this.newSong = new Song();
   }
 }

@@ -37,7 +37,7 @@ export class SongReactiveFormComponent {
 
   save() {
     console.log(this.form.value)
-    this.songList.songs.push(this.form.value as Song);
+    this.songList.add(this.form.value as Song);
     this.form.reset();
   }
 }
