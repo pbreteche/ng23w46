@@ -1,9 +1,8 @@
 <h1>{{ title }}</h1>
 
-<app-song-select-list (onSelect)="setCurrent($event)"></app-song-select-list>
-
-<app-song-card [song]="current"></app-song-card>
-
-<app-song-reactive-form></app-song-reactive-form>
+<nav>
+  <a routerLink="">Accueil</a>
+  <a routerLink="new">Ajouter</a>
+</nav>
 
 <router-outlet></router-outlet>

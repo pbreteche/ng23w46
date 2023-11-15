@@ -1,7 +1,7 @@
 <nav>
   <ul>
     <li *ngFor="let song of songList.songs">
-      <a (click)="select(song)">{{ song.title }}</a>
+      <a [routerLink]="['detail', song.title]">{{ song.title }}</a>
     </li>
   </ul>
 </nav>
