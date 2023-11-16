@@ -1,7 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {CataasFilterComponent} from "../cataas-filter/cataas-filter.component";
-import {HttpClient, HttpParams} from "@angular/common/http";
+import {CataasApiService} from "../cataas-api.service";
+import {CataasFilters} from "../cataas.types";
 
 @Component({
   selector: 'app-cataas',
@@ -12,23 +13,18 @@ import {HttpClient, HttpParams} from "@angular/common/http";
 })
 export class CataasComponent implements OnInit{
   cats: any[] = [];
-  constructor(private client: HttpClient) {
+  constructor(private client: CataasApiService) {
   }
 
   ngOnInit(): void {
-    this.refresh([])
+    this.refresh({
+      tags: [],
+      limit: 10,
+    })
   }
 
-  refresh($event: string[]) {
-    const params = new HttpParams({
-      fromObject: {
-        tags: $event,
-        limit: 10,
-      }
-    })
-    this.client.get('https://cataas.com/api/cats', {
-      params: params
-    }).subscribe(cats => {
+  refresh($event: CataasFilters) {
+    this.client.fetchCats($event).subscribe(cats => {
       if (!Array.isArray(cats)) {
         return;
       }

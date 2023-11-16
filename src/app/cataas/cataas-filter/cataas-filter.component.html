@@ -3,6 +3,12 @@
     <mat-option *ngFor="let tag of tags" [value]="tag">{{tag}}</mat-option>
   </mat-select>
 </mat-form-field>
+
+<mat-slider min="1" max="20" showTickMarks>
+  <input matSliderThumb [(value)]="limit" (valueChange)="select()">
+</mat-slider>
+
 <p>
   {{selectedTags | json}}
+  {{limit | json}}
 </p>

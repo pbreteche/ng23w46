@@ -2,20 +2,22 @@ import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {HttpClient} from "@angular/common/http";
 import {MatSelectModule} from "@angular/material/select";
+import {MatSliderModule} from "@angular/material/slider";
+import {CataasFilters} from "../cataas.types";
 
 @Component({
   selector: 'app-cataas-filter',
   standalone: true,
-  imports: [CommonModule, MatSelectModule],
+  imports: [CommonModule, MatSelectModule, MatSliderModule],
   templateUrl: './cataas-filter.component.html',
   styleUrl: './cataas-filter.component.scss'
 })
 export class CataasFilterComponent implements OnInit  {
-
   tags: string[] = [];
   selectedTags: string[] = [];
+  limit = 10;
   @Output()
-  onChange = new EventEmitter<string[]>();
+  onChange = new EventEmitter<CataasFilters>();
   constructor(private client: HttpClient) {
   }
 
@@ -29,6 +31,11 @@ export class CataasFilterComponent implements OnInit  {
       })
   }
   select() {
-    this.onChange.emit(this.selectedTags);
+    if (this.selectedTags.length > 0 && this.limit != null) {
+      this.onChange.emit({
+        tags: this.selectedTags,
+        limit: this.limit
+      });
+    }
   }
 }
