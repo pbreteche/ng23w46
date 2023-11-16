@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpHeaders} from "@angular/common/http";
-import {Subject} from "rxjs";
+import {HttpClient, HttpErrorResponse, HttpHeaders} from "@angular/common/http";
+import {catchError, Subject, throwError} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -19,10 +19,17 @@ export class SongStatsService {
       'X-token': 'cle API',
     })
 
-    this.client.get('/assets/stats.json', {
+    this.client.get('/assets/bad-file-name.json', {
       headers: headers,
       observe: "response"
     })
+      .pipe(
+        catchError((error: HttpErrorResponse) => {
+          console.error(error.message)
+
+          return throwError(() => new Error('message d\'erreur : '+error.status))
+        })
+      )
       .subscribe(response => {
         const type = response.headers.get('content-type');
         console.log(type)
