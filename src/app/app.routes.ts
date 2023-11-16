@@ -14,6 +14,7 @@ export const routes: Routes = [
     path: 'detail/:id',
     component: SongCardComponent,
     resolve: {song: songResolver},
+    runGuardsAndResolvers: 'always',
     title: songTitleResolver,
     children: [
       {path: '', component: SongCardMoreDetailComponent},

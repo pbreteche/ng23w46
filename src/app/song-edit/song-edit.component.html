@@ -1,1 +1,36 @@
-<p>song-edit works!</p>
+<pre>
+{{song | json }}
+</pre>
+
+<div *ngIf="song">
+<form #form="ngForm" (ngSubmit)="save(); form.reset()">
+  <div>
+    <label for="song-template-form-title">Titre</label>
+    <input type="text" name="title" id="song-template-form-title"
+           #title="ngModel" [(ngModel)]="song.title" required
+    >
+    <p class="error-message" *ngIf="title.invalid && title.touched">
+      Merci de saisir un titre.
+    </p>
+  </div>
+  <div>
+    <label for="song-template-form-artist">Artiste</label>
+    <input type="text" name="artist" id="song-template-form-artist"
+           #artist="ngModel" [(ngModel)]="song.artist" required
+    >
+    <p class="error-message" *ngIf="artist.errors?.['required'] && artist.touched">
+      Merci de saisir un artiste.
+    </p>
+  </div>
+  <div>
+    <label for="song-template-form-year">Année</label>
+    <input type="number" name="year" id="song-template-form-year"
+           #year="ngModel" [(ngModel)]="song.year" min="1900" max="2200"
+    >
+    <p class="error-message" *ngIf="(year.errors?.['min'] || year.errors?.['max']) && year.touched">
+      L'année doit se situer entre 1900 et 2200.
+    </p>
+  </div>
+  <button [disabled]="form.invalid">Ajouter</button>
+</form>
+</div>
