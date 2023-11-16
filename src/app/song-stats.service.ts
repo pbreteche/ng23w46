@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from "@angular/common/http";
+import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Subject} from "rxjs";
 
 @Injectable({
@@ -14,7 +14,14 @@ export class SongStatsService {
   }
 
   private statsFor() {
-    this.client.get('/assets/stats.json')
+    const headers = new HttpHeaders({
+      'Content-type': 'application/json',
+      'X-token': 'cle API',
+    })
+
+    this.client.get('/assets/stats.json', {
+      headers: headers,
+    })
       .subscribe(data => this.subject.next(data))
   }
 
