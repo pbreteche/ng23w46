@@ -15,11 +15,14 @@ export class SongStatsService {
 
   private statsFor() {
     const headers = new HttpHeaders({
-      'Content-type': 'application/json',
+      'Content-type': 'application/x-www-form-urlencoded',
       'X-token': 'cle API',
     })
 
-    this.client.get('/assets/bad-file-name.json', {
+    const data = new URLSearchParams();
+    data.set('value', '123');
+
+    this.client.post('/api/endpoint', data, {
       headers: headers,
       observe: "response"
     })
