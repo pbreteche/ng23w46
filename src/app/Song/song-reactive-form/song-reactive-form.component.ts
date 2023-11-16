@@ -4,6 +4,7 @@ import {FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators} fr
 import {SongListService} from "../../song-list.service";
 import {Song} from "../../model/song";
 import {Router} from "@angular/router";
+import {Validators as AppValidators} from '../../validators';
 
 @Component({
   selector: 'app-song-reactive-form',
@@ -17,8 +18,7 @@ export class SongReactiveFormComponent {
     title: new FormControl('', [Validators.required]),
     artist: new FormControl('', [Validators.required]),
     year: new FormControl('', [
-      Validators.min(1900),
-      Validators.max(2200),
+      AppValidators.lessOrEqualThisYear,
     ])
   });
   constructor(

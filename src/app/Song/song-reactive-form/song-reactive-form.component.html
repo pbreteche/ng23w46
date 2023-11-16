@@ -22,8 +22,8 @@
     <input type="number" id="song-template-form-year"
            formControlName="year"
     >
-    <p class="error-message" *ngIf="showErrorFor('year', 'min') || showErrorFor('year', 'max')">
-      L'année doit se situer entre 1900 et 2200.
+    <p class="error-message" *ngIf="showErrorFor('year', 'lessOrEqualThisYear')">
+      L'année doit être antérieure à l'année courante.
     </p>
   </div>
   <button [disabled]="form.invalid">Ajouter</button>
