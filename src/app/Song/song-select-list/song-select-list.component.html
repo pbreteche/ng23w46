@@ -1,6 +1,6 @@
 <nav>
   <ul>
-    <li *ngFor="let song of songList.songs | keyvalue">
+    <li *ngFor="let song of songList.songs$ | async | keyvalue">
       <a [routerLink]="['detail', song.value.id]">{{ song.value.title }}</a>
     </li>
   </ul>
