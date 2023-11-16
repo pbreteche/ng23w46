@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpErrorResponse, HttpHeaders} from "@angular/common/http";
-import {catchError, Subject, throwError} from "rxjs";
+import {catchError, firstValueFrom, Subject, throwError} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -37,6 +37,10 @@ export class SongStatsService {
         const type = response.headers.get('content-type');
         console.log(type)
       })
+    firstValueFrom(this.client.get('/assets/songs.json'))
+      .then(data => console.log(data))
+      .catch(err => console.error(err))
+    ;
   }
 
   get stats$() {
