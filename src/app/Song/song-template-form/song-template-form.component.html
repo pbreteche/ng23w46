@@ -20,10 +20,10 @@
   <div>
     <label for="song-template-form-year">Année</label>
     <input type="number" name="year" id="song-template-form-year"
-           #year="ngModel" [(ngModel)]="newSong.year" min="1900" max="2200"
+           #year="ngModel" [(ngModel)]="newSong.year" appLessOrEqualThisYear
     >
-    <p class="error-message" *ngIf="(year.errors?.['min'] || year.errors?.['max']) && year.touched">
-      L'année doit se situer entre 1900 et 2200.
+    <p class="error-message" *ngIf="year.errors?.['lessOrEqualThisYear'] && year.touched">
+      L'année doit antérieure  l'année courante.
     </p>
   </div>
   <button [disabled]="form.invalid">Ajouter</button>

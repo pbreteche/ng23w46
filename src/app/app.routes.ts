@@ -8,6 +8,7 @@ import {loginGuard} from "./login.guard";
 import {SongCardMoreDetailComponent} from "./song-card-more-detail/song-card-more-detail.component";
 import {SongEditComponent} from "./song-edit/song-edit.component";
 import {CataasComponent} from "./cataas/cataas/cataas.component";
+import {SongTemplateFormComponent} from "./Song/song-template-form/song-template-form.component";
 
 export const routes: Routes = [
   { path: '', component: SongSelectListComponent, title: 'Song app'},
@@ -22,7 +23,7 @@ export const routes: Routes = [
       {path: 'edit', component: SongEditComponent}
     ]
   },
-  { path: 'new', component: SongReactiveFormComponent, title: 'Nouvelle chanson', canActivate: [loginGuard]},
+  { path: 'new', component: SongTemplateFormComponent, title: 'Nouvelle chanson', canActivate: [loginGuard]},
   { path: 'cataas', component: CataasComponent, title: 'Cataas' },
   { path: '**', redirectTo: '/'}
 ];
