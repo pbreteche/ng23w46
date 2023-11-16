@@ -1,0 +1,8 @@
+<mat-form-field>
+  <mat-select placeholder="Tags" [(value)]="selectedTags" multiple (valueChange)="select()">
+    <mat-option *ngFor="let tag of tags" [value]="tag">{{tag}}</mat-option>
+  </mat-select>
+</mat-form-field>
+<p>
+  {{selectedTags | json}}
+</p>

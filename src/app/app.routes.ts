@@ -7,6 +7,7 @@ import {songTitleResolver} from "./song-title.resolver";
 import {loginGuard} from "./login.guard";
 import {SongCardMoreDetailComponent} from "./song-card-more-detail/song-card-more-detail.component";
 import {SongEditComponent} from "./song-edit/song-edit.component";
+import {CataasComponent} from "./cataas/cataas/cataas.component";
 
 export const routes: Routes = [
   { path: '', component: SongSelectListComponent, title: 'Song app'},
@@ -22,5 +23,6 @@ export const routes: Routes = [
     ]
   },
   { path: 'new', component: SongReactiveFormComponent, title: 'Nouvelle chanson', canActivate: [loginGuard]},
+  { path: 'cataas', component: CataasComponent, title: 'Cataas' },
   { path: '**', redirectTo: '/'}
 ];

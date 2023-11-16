@@ -1,0 +1,5 @@
+<h1>Cat as a Service !</h1>
+
+<app-cataas-filter (onChange)="refresh($event)"></app-cataas-filter>
+
+<img *ngFor="let cat of cats" src="https://cataas.com/cat/{{cat._id}}" height="200">
