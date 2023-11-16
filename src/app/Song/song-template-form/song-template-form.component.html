@@ -21,9 +21,13 @@
     <label for="song-template-form-year">Année</label>
     <input type="number" name="year" id="song-template-form-year"
            #year="ngModel" [(ngModel)]="newSong.year" appLessOrEqualThisYear
+           appLessOrEqualByYear="2024"
     >
     <p class="error-message" *ngIf="year.errors?.['lessOrEqualThisYear'] && year.touched">
-      L'année doit antérieure  l'année courante.
+      L'année doit antérieure à l'année courante.
+    </p>
+    <p class="error-message" *ngIf="year.errors?.['lessOrEqualByYear'] && year.touched">
+      L'année doit antérieure à l'année {{ year.errors?.['lessOrEqualByYear'].year }}.
     </p>
   </div>
   <button [disabled]="form.invalid">Ajouter</button>

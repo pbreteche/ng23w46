@@ -4,11 +4,12 @@ import {Song} from "../../model/song";
 import {FormsModule} from "@angular/forms";
 import {SongListService} from "../../song-list.service";
 import {LessOrEqualThisYearDirective} from "../../less-or-equal-this-year.directive";
+import {LessOrEqualByYearDirective} from "../../less-or-equal-by-year.directive";
 
 @Component({
   selector: 'app-song-template-form',
   standalone: true,
-  imports: [CommonModule, FormsModule, LessOrEqualThisYearDirective],
+  imports: [CommonModule, FormsModule, LessOrEqualThisYearDirective, LessOrEqualByYearDirective],
   templateUrl: './song-template-form.component.html',
   styleUrl: './song-template-form.component.scss'
 })
