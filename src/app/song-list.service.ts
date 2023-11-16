@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {Song} from "./model/song";
 import {HttpClient} from "@angular/common/http";
 import {BehaviorSubject, Observable} from "rxjs";
+import {SongStatsService} from "./song-stats.service";
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,10 @@ export class SongListService {
   nextId = 34;
   subject = new BehaviorSubject<Map<number, Song>>(new Map())
 
-  constructor(private client: HttpClient) {
+  constructor(
+    private client: HttpClient,
+    private stats: SongStatsService
+  ) {
     this.refresh()
   }
 

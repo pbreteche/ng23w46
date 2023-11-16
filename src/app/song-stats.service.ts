@@ -10,7 +10,7 @@ export class SongStatsService {
   constructor(
     private client: HttpClient
   ) {
-    setInterval(this.statsFor, 10000);
+    this.statsFor();
   }
 
   private statsFor() {
@@ -21,8 +21,12 @@ export class SongStatsService {
 
     this.client.get('/assets/stats.json', {
       headers: headers,
+      observe: "response"
     })
-      .subscribe(data => this.subject.next(data))
+      .subscribe(response => {
+        const type = response.headers.get('content-type');
+        console.log(type)
+      })
   }
 
   get stats$() {
