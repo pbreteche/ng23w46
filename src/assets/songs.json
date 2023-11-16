@@ -1,0 +1,26 @@
+[
+  {
+    "id": 5,
+    "title": "Titre chanson",
+    "artist": "Nom de scène",
+    "year": 1234
+  },
+  {
+    "id": 7,
+    "title": "Autre titre",
+    "artist": "Michel",
+    "year": 2015
+  },
+  {
+    "id": 8,
+    "title": "Un titre un peu long",
+    "artist": "Louise",
+    "year": 2020
+  },
+  {
+    "id": 11,
+    "title": "A",
+    "artist": "Blue Boy",
+    "year": 2025
+  }
+]
