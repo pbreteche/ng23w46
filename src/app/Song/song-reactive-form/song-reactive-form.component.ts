@@ -19,6 +19,7 @@ export class SongReactiveFormComponent {
     artist: new FormControl('', [Validators.required]),
     year: new FormControl('', [
       AppValidators.lessOrEqualThisYear,
+      AppValidators.lessOrEqualByYear(2024)
     ])
   });
   constructor(

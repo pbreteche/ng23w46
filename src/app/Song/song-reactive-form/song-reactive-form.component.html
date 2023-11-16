@@ -25,6 +25,9 @@
     <p class="error-message" *ngIf="showErrorFor('year', 'lessOrEqualThisYear')">
       L'année doit être antérieure à l'année courante.
     </p>
+    <p class="error-message" *ngIf="showErrorFor('year', 'lessOrEqualByYear')">
+      L'année doit être antérieure à l'année {{ form.get('year')?.getError('lessOrEqualByYear').year }}.
+    </p>
   </div>
   <button [disabled]="form.invalid">Ajouter</button>
 </form>

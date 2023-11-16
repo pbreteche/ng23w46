@@ -23,7 +23,7 @@ export const routes: Routes = [
       {path: 'edit', component: SongEditComponent}
     ]
   },
-  { path: 'new', component: SongTemplateFormComponent, title: 'Nouvelle chanson', canActivate: [loginGuard]},
+  { path: 'new', component: SongReactiveFormComponent, title: 'Nouvelle chanson', canActivate: [loginGuard]},
   { path: 'cataas', component: CataasComponent, title: 'Cataas' },
   { path: '**', redirectTo: '/'}
 ];
