@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {RouterLink, RouterOutlet} from '@angular/router';
 import {LoginComponent} from "./login/login.component";
+import {TransliterationPipe} from "./transliteration.pipe";
 
 @Component({
   selector: 'app-root',
@@ -10,7 +11,8 @@ import {LoginComponent} from "./login/login.component";
     CommonModule,
     RouterOutlet,
     RouterLink,
-    LoginComponent
+    LoginComponent,
+    TransliterationPipe,
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
