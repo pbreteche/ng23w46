@@ -19,4 +19,11 @@ import {TransliterationPipe} from "./transliteration.pipe";
 })
 export class AppComponent {
   title = 'ng23w46';
+
+  get classes() {
+    return {
+      highlighted: true,
+      is_changed: false,
+    }
+  }
 }

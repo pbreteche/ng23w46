@@ -22,3 +22,4 @@
 <p>Pipe currency : {{ 12345.67 | currency:'EUR' }}</p>
 <p>Pipe currency : {{ 12345.67 | currency:'EUR':undefined:undefined:'en-US' }}</p>
 <p>Pipe personnalisé (transliteration) : {{ '你好, éôïÀç, 🍕🌹🌤' | transliterate:[['你', 'You']] }}</p>
+<p [ngClass]="classes">ngClass, liaison (property binding) sur les classes de l'élément du DOM</p>
