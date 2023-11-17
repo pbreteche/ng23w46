@@ -3,8 +3,8 @@ import { provideRouter } from '@angular/router';
 
 import { routes } from './app.routes';
 import {HTTP_INTERCEPTORS, HttpClientModule, provideHttpClient, withInterceptors} from "@angular/common/http";
-import {tokenInterceptor} from "./token.interceptor";
-import {Token2Interceptor} from "./token2.interceptor";
+import {tokenInterceptor} from "./interceptor/token.interceptor";
+import {Token2Interceptor} from "./interceptor/token2.interceptor";
 import { provideAnimations } from '@angular/platform-browser/animations';
 
 export const appConfig: ApplicationConfig = {

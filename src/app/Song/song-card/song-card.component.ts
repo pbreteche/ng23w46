@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {ActivatedRoute, RouterOutlet} from "@angular/router";
-import {Song} from "../model/song";
+import {Song} from "../../model/song";
 
 @Component({
   selector: 'app-song-card',

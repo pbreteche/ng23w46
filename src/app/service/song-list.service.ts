@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {Song} from "./model/song";
+import {Song} from "../model/song";
 import {HttpClient} from "@angular/common/http";
 import {BehaviorSubject, Observable} from "rxjs";
 import {SongStatsService} from "./song-stats.service";

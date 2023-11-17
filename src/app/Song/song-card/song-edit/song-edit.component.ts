@@ -1,9 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {Song} from "../model/song";
+import {Song} from "../../../model/song";
 import {ActivatedRoute, Router} from "@angular/router";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import {SongListService} from "../song-list.service";
+import {SongListService} from "../../../service/song-list.service";
 
 @Component({
   selector: 'app-song-edit',

@@ -1,5 +1,5 @@
 import {HttpEvent, HttpHandler, HttpInterceptor, HttpRequest} from '@angular/common/http';
-import {TokenService} from "./token.service";
+import {TokenService} from "../service/token.service";
 import {Observable} from "rxjs";
 import {Injectable} from "@angular/core";
 

@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {SongListService} from "../../song-list.service";
+import {SongListService} from "../../service/song-list.service";
 import {RouterLink} from "@angular/router";
 
 @Component({

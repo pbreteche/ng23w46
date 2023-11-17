@@ -2,9 +2,9 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {Song} from "../../model/song";
 import {FormsModule} from "@angular/forms";
-import {SongListService} from "../../song-list.service";
-import {LessOrEqualThisYearDirective} from "../../less-or-equal-this-year.directive";
-import {LessOrEqualByYearDirective} from "../../less-or-equal-by-year.directive";
+import {SongListService} from "../../service/song-list.service";
+import {LessOrEqualThisYearDirective} from "../../validators/less-or-equal-this-year.directive";
+import {LessOrEqualByYearDirective} from "../../validators/less-or-equal-by-year.directive";
 
 @Component({
   selector: 'app-song-template-form',

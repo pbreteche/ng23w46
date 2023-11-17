@@ -2,9 +2,9 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {RouterLink, RouterOutlet} from '@angular/router';
 import {LoginComponent} from "./login/login.component";
-import {TransliterationPipe} from "./transliteration.pipe";
-import {HighlightDirective} from "./highlight.directive";
-import {UnlessDirective} from "./unless.directive";
+import {TransliterationPipe} from "./pipe/transliteration.pipe";
+import {HighlightDirective} from "./directive/highlight.directive";
+import {UnlessDirective} from "./directive/unless.directive";
 
 @Component({
   selector: 'app-root',

@@ -9,7 +9,7 @@
 </nav>
 
 <router-outlet></router-outlet>
-
+<div [hidden]="true">
 <p>Pipe uppercase : {{ 'une chaine de caractères' | uppercase }}</p>
 <!-- source Id déclaré dans angular.json -->
 <p>Pipe date : {{ '2023-11-17' | date:'longDate' }}</p>
@@ -30,3 +30,4 @@
 <ng-template [appUnless]="false">
   <p>Directive structurelle Unless false (syntaxe non raccourcie)</p>
 </ng-template>
+</div>

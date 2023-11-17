@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators} from "@angular/forms";
-import {SongListService} from "../../song-list.service";
+import {SongListService} from "../../service/song-list.service";
 import {Song} from "../../model/song";
 import {Router} from "@angular/router";
-import {Validators as AppValidators} from '../../validators';
+import {Validators as AppValidators} from '../../validators/validators';
 
 @Component({
   selector: 'app-song-reactive-form',
