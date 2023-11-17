@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import {RouterLink, RouterOutlet} from '@angular/router';
 import {LoginComponent} from "./login/login.component";
 import {TransliterationPipe} from "./transliteration.pipe";
+import {HighlightDirective} from "./highlight.directive";
 
 @Component({
   selector: 'app-root',
@@ -13,6 +14,7 @@ import {TransliterationPipe} from "./transliteration.pipe";
     RouterLink,
     LoginComponent,
     TransliterationPipe,
+    HighlightDirective,
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
