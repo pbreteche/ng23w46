@@ -17,3 +17,7 @@
 <p>Pipe date : {{ '2023-11-17' | date:'longDate':undefined:'en-US' }}</p>
 <!-- locale additionnelle importée dans le main.ts -->
 <p>Pipe date : {{ '2023-11-17' | date:'longDate':undefined:'es' }}</p>
+<p>Pipe date : {{ '2023-11-17' | date:'MMM d, y' }}</p>
+<p>Pipe date : {{ '2023-11-17' | date:'MMM d, y':undefined:'en-US' }}</p>
+<p>Pipe currency : {{ 12345.67 | currency:'EUR' }}</p>
+<p>Pipe currency : {{ 12345.67 | currency:'EUR':undefined:undefined:'en-US' }}</p>
