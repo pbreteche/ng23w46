@@ -25,3 +25,8 @@
 <p [ngClass]="classes">ngClass, liaison (property binding) sur les classes de l'élément du DOM</p>
 <p appHighlight="lightblue">Test directive personnalisée</p>
 <p appHighlight>Test directive personnalisée</p>
+<p *appUnless="true">Directive structurelle Unless true</p>
+<p *appUnless="false">Directive structurelle Unless false</p>
+<ng-template [appUnless]="false">
+  <p>Directive structurelle Unless false (syntaxe non raccourcie)</p>
+</ng-template>

@@ -4,6 +4,7 @@ import {RouterLink, RouterOutlet} from '@angular/router';
 import {LoginComponent} from "./login/login.component";
 import {TransliterationPipe} from "./transliteration.pipe";
 import {HighlightDirective} from "./highlight.directive";
+import {UnlessDirective} from "./unless.directive";
 
 @Component({
   selector: 'app-root',
@@ -15,6 +16,7 @@ import {HighlightDirective} from "./highlight.directive";
     LoginComponent,
     TransliterationPipe,
     HighlightDirective,
+    UnlessDirective,
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
