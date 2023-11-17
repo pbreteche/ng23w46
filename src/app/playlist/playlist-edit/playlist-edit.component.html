@@ -1,0 +1,21 @@
+<h2>Édition de la liste : {{ playlist?.name }}</h2>
+
+<mat-form-field>
+  <mat-label>Chanson</mat-label>
+  <mat-select [(ngModel)]="selectedSong">
+    <mat-option *ngFor="let song of songList.songs | keyvalue" [value]="song.value">{{song.value.title}}</mat-option>
+  </mat-select>
+</mat-form-field>
+<button mat-fab (click)="add()">
+  <mat-icon aria-hidden="false" fontIcon="add-circle"></mat-icon>
+</button>
+
+<button mat-fab (click)="done()">
+  <mat-icon aria-hidden="false" fontIcon="done"></mat-icon>
+</button>
+<mat-list>
+  <mat-list-item *ngFor="let song of playlist?.songs">
+    <span matListItemTitle>{{ song.title}}</span>
+    <span matListItemLine>{{ song.artist }} - {{ song.year }}</span>
+  </mat-list-item>
+</mat-list>

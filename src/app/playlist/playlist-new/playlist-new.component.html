@@ -1,0 +1,11 @@
+<form #form="ngForm" (ngSubmit)="save(); form.reset()">
+  <mat-form-field class="example-full-width">
+    <mat-label>Nom</mat-label>
+    <input matInput placeholder="Rock-pop 70" name="name" required [(ngModel)]="newPlaylist.name">
+  </mat-form-field>
+  <div>
+    <button mat-fab [disabled]="form.invalid">
+      <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="add-circle"></mat-icon>
+    </button>
+  </div>
+</form>

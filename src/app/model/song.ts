@@ -4,3 +4,9 @@ export class Song {
   artist = '';
   year?: number;
 }
+
+export class Playlist {
+  uuid = '';
+  name = '';
+  songs: Song[] = [];
+}

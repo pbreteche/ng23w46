@@ -9,6 +9,12 @@ import {SongCardMoreDetailComponent} from "./Song/song-card/song-card-more-detai
 import {SongEditComponent} from "./Song/song-card/song-edit/song-edit.component";
 import {CataasComponent} from "./cataas/cataas/cataas.component";
 import {SongTemplateFormComponent} from "./Song/song-template-form/song-template-form.component";
+import {PlaylistComponent} from "./playlist/playlist.component";
+import {PlaylistOverviewComponent} from "./playlist/playlist-overview/playlist-overview.component";
+import {PlaylistDetailComponent} from "./playlist/playlist-detail/playlist-detail.component";
+import {PlaylistEditComponent} from "./playlist/playlist-edit/playlist-edit.component";
+import {PlaylistNewComponent} from "./playlist/playlist-new/playlist-new.component";
+import {playlistResolver} from "./playlist/playlist.resolver";
 
 export const routes: Routes = [
   { path: '', component: SongSelectListComponent, title: 'Song app'},
@@ -21,6 +27,16 @@ export const routes: Routes = [
     children: [
       {path: '', component: SongCardMoreDetailComponent},
       {path: 'edit', component: SongEditComponent}
+    ]
+  },
+  {
+    path: 'playlist',
+    component: PlaylistComponent,
+    children: [
+      {path: '', component: PlaylistOverviewComponent },
+      {path: 'new', component: PlaylistNewComponent },
+      {path: ':uuid', component: PlaylistDetailComponent, resolve: {playlist: playlistResolver} },
+      {path: ':uuid/edit', component: PlaylistEditComponent, resolve: {playlist: playlistResolver}},
     ]
   },
   { path: 'new', component: SongReactiveFormComponent, title: 'Nouvelle chanson', canActivate: [loginGuard]},
