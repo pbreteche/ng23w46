@@ -9,3 +9,11 @@
 </nav>
 
 <router-outlet></router-outlet>
+
+<p>Pipe uppercase : {{ 'une chaine de caractères' | uppercase }}</p>
+<!-- source Id déclaré dans angular.json -->
+<p>Pipe date : {{ '2023-11-17' | date:'longDate' }}</p>
+<!-- en-US toujours disponible -->
+<p>Pipe date : {{ '2023-11-17' | date:'longDate':undefined:'en-US' }}</p>
+<!-- locale additionnelle importée dans le main.ts -->
+<p>Pipe date : {{ '2023-11-17' | date:'longDate':undefined:'es' }}</p>
